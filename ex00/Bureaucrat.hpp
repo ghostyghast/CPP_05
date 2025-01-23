@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 18:50:47 by amaligno          #+#    #+#             */
-/*   Updated: 2025/01/10 20:23:07 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/01/23 19:18:10 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ class Bureaucrat
 		void		decrementGrade(void);
 	//Operator Overloads
 		Bureaucrat		&operator=(Bureaucrat &copy);
-		std::ostream	&operator<<(std::ostream &stream, const Bureaucrat &b);
 
 	//Exceptions
 		class GradeTooHighException : public std::exception
@@ -51,5 +50,7 @@ class Bureaucrat
 		const std::string	_name;
 		short				_grade;
 };
+
+std::ostream	&operator<<(std::ostream &stream, const Bureaucrat &b);
 
 #endif

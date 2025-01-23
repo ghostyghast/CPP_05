@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 18:50:50 by amaligno          #+#    #+#             */
-/*   Updated: 2025/01/10 20:23:52 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/01/23 19:16:49 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Bureaucrat	&Bureaucrat::operator=(Bureaucrat &copy)
 	return (*this);
 }
 
-std::ostream	&Bureaucrat::operator<<(std::ostream &stream, const Bureaucrat &b)
+std::ostream	&operator<<(std::ostream &stream, const Bureaucrat &b)
 {
 	stream << b.getName() << ", bureaucrat grade " << b.getGrade();
 	return (stream);
