@@ -6,12 +6,14 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 18:50:50 by amaligno          #+#    #+#             */
-/*   Updated: 2025/01/23 19:16:49 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/01/24 19:01:34 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <iostream>
+
+using	std::cout;
 
 Bureaucrat::Bureaucrat() :  _name("Cog"), _grade(150)
 {
@@ -21,7 +23,7 @@ Bureaucrat::Bureaucrat(std::string name, short grade) :  _name(name), _grade(gra
 {
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat &copy) : _name(copy.getName()), _grade(copy.getGrade())
+Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName()), _grade(copy.getGrade())
 {
 }
 
@@ -29,7 +31,7 @@ Bureaucrat::~Bureaucrat()
 {
 }
 
-Bureaucrat	&Bureaucrat::operator=(Bureaucrat &copy)
+Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &copy)
 {
 	this->_grade = copy.getGrade();
 	return (*this);
@@ -67,10 +69,25 @@ void		Bureaucrat::decrementGrade(void)
 
 const char		*Bureaucrat::GradeTooHighException::what(void) const throw()
 {
-	return ("Grade too high!");
+	return ("Grade is too high!");
 }
 
 const char		*Bureaucrat::GradeTooLowException::what(void) const throw()
 {
-	return ("Grade too low!");
+	return ("Grade is too low!");
+}
+
+void	Bureaucrat::signForm(Form &form) const
+{
+	try
+	{
+		form.beSigned(*this);
+	}
+	catch(const std::exception& e)
+	{
+		cout << this->_name << " couldn't sign form because " << e.what() << '\n';
+		return ;
+	}
+	cout << this->_name << " signed " << form.getName() << '\n';
+	
 }

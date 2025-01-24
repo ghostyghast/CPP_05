@@ -6,15 +6,17 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 18:50:47 by amaligno          #+#    #+#             */
-/*   Updated: 2025/01/23 19:38:52 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/01/24 18:36:18 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef Bureaucrat_HPP
 # define Bureaucrat_HPP
 
-#include <exception>
-#include <string>
+# include <exception>
+# include <string>
+
+class	Form;
 
 class Bureaucrat
 {
@@ -22,17 +24,18 @@ class Bureaucrat
 	//Constructors
 		Bureaucrat();
 		Bureaucrat(std::string name, short grade);
-		Bureaucrat(Bureaucrat &copy);
+		Bureaucrat(const Bureaucrat &copy);
 	//Destructor
 		~Bureaucrat();
 	//Getters	
 		const std::string	&getName(void) const;	
 		const short			&getGrade(void) const;
 	//Methods
+		void				signForm(Form &form) const;
 		void				incrementGrade(void);
 		void				decrementGrade(void);
 	//Operator Overloads
-		Bureaucrat			&operator=(Bureaucrat &copy);
+		Bureaucrat			&operator=(const Bureaucrat &copy);
 
 	//Exceptions
 		class GradeTooHighException : public std::exception
@@ -50,6 +53,8 @@ class Bureaucrat
 		const std::string	_name;
 		short				_grade;
 };
+
+# include "Form.hpp"
 
 std::ostream	&operator<<(std::ostream &stream, const Bureaucrat &b);
 
