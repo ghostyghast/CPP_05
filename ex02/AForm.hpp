@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 19:26:45 by amaligno          #+#    #+#             */
-/*   Updated: 2025/01/24 20:31:41 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/01/27 18:56:28 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class AForm{
 		const int			&getSignGrade() const;
 		const int			&getExecGrade() const;
 
-		virtual void		execute(Bureaucrat const &executor) const = 0;
+		void				execute(Bureaucrat const &executor) const;
 
 		void				beSigned(const Bureaucrat &b);
 
@@ -43,7 +43,14 @@ class AForm{
 			public:
 				const char	*what() const throw();	
 		};
-		
+		class FormNotSignedException : public std::exception
+		{
+			public:
+				const char	*what() const throw();	
+		};
+	
+	protected:
+		virtual void		performAction() = 0;
 	private:
 		const std::string	_name;
 		bool				_signed;

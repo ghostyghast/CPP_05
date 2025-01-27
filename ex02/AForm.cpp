@@ -89,3 +89,11 @@ const char	*AForm::GradeTooLowException::what() const throw()
 {
 	return ("Grade too low!");
 }
+
+void		AForm::execute(const Bureaucrat &executor) const
+{
+	if (!this->_signed)
+		throw (FormNotSignedException());
+	if (this->_execGrade < executor.getGrade())
+		throw (GradeTooLowException());
+}
