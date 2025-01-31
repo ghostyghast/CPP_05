@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 18:50:50 by amaligno          #+#    #+#             */
-/*   Updated: 2025/01/24 19:23:03 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/01/31 19:13:09 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,10 @@ void	Bureaucrat::signForm(AForm &form) const
 	}
 	cout << this->_name << " signed " << form.getName() << '\n';
 	
+}
+
+void	Bureaucrat::executeForm(AForm const &form) const
+{
+	form.execute(*this);
+	cout << this->_name << " executed " << form.getName() << '\n';
 }

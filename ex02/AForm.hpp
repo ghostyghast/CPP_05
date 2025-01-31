@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 19:26:45 by amaligno          #+#    #+#             */
-/*   Updated: 2025/01/27 18:56:28 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/01/31 17:28:43 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,8 @@ class AForm{
 				const char	*what() const throw();	
 		};
 	
-	protected:
-		virtual void		performAction() = 0;
 	private:
+		virtual void		performExecute() const = 0;
 		const std::string	_name;
 		bool				_signed;
 		const int			_signGrade;

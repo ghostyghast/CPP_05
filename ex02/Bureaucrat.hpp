@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 18:50:47 by amaligno          #+#    #+#             */
-/*   Updated: 2025/01/24 19:43:06 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/01/31 19:11:15 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Bureaucrat
 		const short			&getGrade(void) const;
 	//Methods
 		void				signForm(AForm &form) const;
+		void				executeForm(AForm const &form) const;
 		void				incrementGrade(void);
 		void				decrementGrade(void);
 	//Operator Overloads
