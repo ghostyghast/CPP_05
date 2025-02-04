@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 20:05:10 by amaligno          #+#    #+#             */
-/*   Updated: 2025/01/31 19:28:46 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/02/04 18:14:52 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	main(void)
 		std::cerr << e.what() << '\n';
 	}
 	cout << "------Test2------" << '\n';
+	cout << gerald << '\n';
 	try
 	{
 		gerald.signForm(treeform);
@@ -50,12 +51,14 @@ int	main(void)
 	for (int i = 0; i < 3; i++)
 		gerald.incrementGrade();
 	cout << gerald << '\n';
-	try
-	{
-		gerald.executeForm(treeform);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	bob.signForm(treeform);
+	bob.executeForm(treeform);
+	cout << "------Test4------" << '\n';
+	for (int i = 0; i < 77; i++)
+		gerald.incrementGrade();
+	cout << gerald << '\n';
+	gerald.signForm(robotizer);
+	bob.executeForm(robotizer);
+	bob.signForm(president);
+	bob.executeForm(president);
 }
