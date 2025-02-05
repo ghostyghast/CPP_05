@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pringles <pringles@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 18:21:40 by amaligno          #+#    #+#             */
-/*   Updated: 2025/02/04 19:34:59 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/02/05 19:35:08 by pringles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ template <typename T> static AForm *newForm(std::string target)
 	return (new T(target));
 }
 
-AForm	*makeForm(std::string name, std::string target)
+AForm	*Intern::makeForm(std::string name, std::string target)
 {
 	std::map<std::string, AForm *(*)(std::string)>	forms;
 	forms["shrubbery creation"] = newForm<ShrubberyCreationForm>;

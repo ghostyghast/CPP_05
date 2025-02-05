@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pringles <pringles@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 20:05:10 by amaligno          #+#    #+#             */
-/*   Updated: 2025/02/04 19:41:02 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/02/05 19:31:30 by pringles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-#include "Intern.cpp"
+#include "Intern.hpp"
 #include <iostream>
 
 using	std::cout;
@@ -63,4 +63,7 @@ int	main(void)
 	bob.executeForm(*robotizer);
 	bob.signForm(*president);
 	bob.executeForm(*president);
+	delete president;
+	delete robotizer;
+	delete treeform;
 }

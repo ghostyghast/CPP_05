@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pringles <pringles@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 19:26:45 by amaligno          #+#    #+#             */
-/*   Updated: 2025/01/31 17:28:43 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/02/05 19:31:52 by pringles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class AForm{
 	public:
 		AForm();
 		AForm(std::string name, int sign_grade, int exec_grade);
-		~AForm();
+		virtual ~AForm();
 		AForm(const AForm &copy);
 		AForm &operator=(const AForm &copy);
 
