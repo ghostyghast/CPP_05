@@ -6,7 +6,7 @@
 /*   By: pringles <pringles@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 20:05:10 by amaligno          #+#    #+#             */
-/*   Updated: 2025/02/05 19:31:30 by pringles         ###   ########.fr       */
+/*   Updated: 2025/02/05 20:09:58 by pringles         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,6 @@ int	main(void)
 	delete president;
 	delete robotizer;
 	delete treeform;
+
+	unpaid.makeForm("fake", "someone");
 }
