@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 20:05:10 by amaligno          #+#    #+#             */
-/*   Updated: 2025/04/22 20:01:45 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/04/22 20:29:25 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		 cout << e.what() << '\n';
 	}
 	cout << "------Test2------" << '\n';
 	cout << gerald << '\n';
@@ -45,7 +45,7 @@ int	main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		 cout << e.what() << '\n';
 	}
 	cout << "------Test3------" << '\n';
 	for (int i = 0; i < 3; i++)

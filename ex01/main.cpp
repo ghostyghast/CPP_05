@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 20:05:10 by amaligno          #+#    #+#             */
-/*   Updated: 2025/04/22 19:25:11 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/04/22 21:07:26 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include <iostream>
 
 using	std::cout;
-using	std::cerr;
 
 int	main(void)
 {
@@ -26,7 +25,7 @@ int	main(void)
 	}
 	catch(const std::exception& e)
 	{
-		cerr << e.what() << '\n';
+		cout << e.what() << '\n';
 	}
 	try
 	{
@@ -34,7 +33,7 @@ int	main(void)
 	}
 	catch(const std::exception& e)
 	{
-		cerr << e.what() << '\n';
+		cout << e.what() << '\n';
 	}
 	try
 	{
@@ -42,7 +41,7 @@ int	main(void)
 	}
 	catch(const std::exception& e)
 	{
-		cerr << e.what() << '\n';
+		cout << e.what() << '\n';
 	}
 	try
 	{
@@ -50,7 +49,7 @@ int	main(void)
 	}
 	catch(const std::exception& e)
 	{
-		cerr << e.what() << '\n';
+		cout << e.what() << '\n';
 	}
 
 	cout << "------Test2------" << '\n';
