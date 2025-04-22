@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 18:50:50 by amaligno          #+#    #+#             */
-/*   Updated: 2025/01/24 19:01:34 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/04/22 19:05:08 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ Bureaucrat::Bureaucrat() :  _name("Cog"), _grade(150)
 
 Bureaucrat::Bureaucrat(std::string name, short grade) :  _name(name), _grade(grade)
 {
+	if (grade < 1)
+		throw GradeTooHighException();
+	if (grade > 150)
+		throw GradeTooLowException();
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName()), _grade(copy.getGrade())
