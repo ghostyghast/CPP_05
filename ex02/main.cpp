@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 20:05:10 by amaligno          #+#    #+#             */
-/*   Updated: 2025/02/04 18:14:52 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/04/22 20:01:45 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(void)
 	Bureaucrat				gerald("gerald", 140);
 	ShrubberyCreationForm	treeform("42");
 	RobotomyRequestForm		robotizer("bob");
-	PresidentialPardonForm	president("bobby");
+	PresidentialPardonForm	president("criminal");
 	
 	cout << "------Test1------" << '\n';
 	try
