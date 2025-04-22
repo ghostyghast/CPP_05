@@ -6,7 +6,7 @@
 /*   By: amaligno <amaligno@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 20:05:10 by amaligno          #+#    #+#             */
-/*   Updated: 2025/01/24 19:16:04 by amaligno         ###   ########.fr       */
+/*   Updated: 2025/04/22 19:21:22 by amaligno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,53 @@
 #include <iostream>
 
 using	std::cout;
+using	std::cerr;
 
 int	main(void)
 {
+	cout << "------Test1------" << '\n';
+	try
+	{
+		Form		form("Alive form", 150, 151);
+	}
+	catch(const std::exception& e)
+	{
+		cerr << e.what() << '\n';
+	}
+	try
+	{
+		Form		form("Alive form", 151, 150);
+	}
+	catch(const std::exception& e)
+	{
+		cerr << e.what() << '\n';
+	}
+	try
+	{
+		Form		form("Alive form", 150, 0);
+	}
+	catch(const std::exception& e)
+	{
+		cerr << e.what() << '\n';
+	}
+	try
+	{
+		Form		form("Alive form", 0, 150);
+	}
+	catch(const std::exception& e)
+	{
+		cerr << e.what() << '\n';
+	}
+
+	cout << "------Test2------" << '\n';
 	Bureaucrat	guy("guy", 50);
 	Form		form("Alive form", 150, 150);
-	cout << "------Test1------" << '\n';
 	cout << guy << '\n';
 	cout << form << '\n';
 	guy.signForm(form);
 	cout << form << '\n';
 
-	cout << "------Test2------" << '\n';
+	cout << "------Test3------" << '\n';
 	Bureaucrat	lameguy("lame guy", 150);
 	Form		coolform("Cool form", 1, 1);
 	cout << lameguy << '\n';
@@ -34,14 +69,14 @@ int	main(void)
 	lameguy.signForm(coolform);
 	cout << coolform << '\n';
 
-	cout << "------Test3------" << '\n';
+	cout << "------Test4------" << '\n';
 	try
 	{
 		Form	test("testform", 0, 1);
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		cerr << e.what() << '\n';
 	}
 	try
 	{
@@ -49,7 +84,7 @@ int	main(void)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		cerr << e.what() << '\n';
 	}
 	
 }
